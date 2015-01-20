@@ -3,7 +3,19 @@ require('./rabbit/BaseInit.js')
 //初始化express
 var express = require('express');
 var config = require('./config.js');
-module.exports = app = express();
+//module.exports = app = express();
+
+var loopback = require('loopback');
+var boot = require('loopback-boot');
+
+module.exports = app =  loopback();
+
+boot(app, __dirname+'/server');
+
+
+//console.log('__dirname',__dirname+'/nloopback');
+
+
 var ExpressInit = require("./rabbit/ExpressInit.js");
 ExpressInit(app);
 

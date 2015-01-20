@@ -26,7 +26,7 @@ var Controller = function(app, func, path, method) {
         }
     };
     this.renderRoute = function(req, res, next) {
-        res.render(path + '.jade')
+        res.render(path + '.html')
     };
     this.mainRoute = func.call(this);
 }
